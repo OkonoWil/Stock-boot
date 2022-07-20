@@ -33,5 +33,4 @@ Route::post('/products', [ProductController::class, 'save'])->name('products.sav
 Route::get('/products/{id}', [ProductController::class, 'details'])->name('products.details');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
-Route::get('/products/{id}/destroy', [ProductController::class, 'getDestroy'])->name('products.getdestroy');
 Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');

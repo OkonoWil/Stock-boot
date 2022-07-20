@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home()
+    public function home(Request $request)
     {
-        return view('welcome');
+        return view('welcome', [
+            'request' => $request
+        ]);
     }
 }

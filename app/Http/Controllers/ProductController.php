@@ -8,11 +8,12 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $products = Product::query()->get();
         return view('products.index', [
             'products' => $products,
+            'request' => $request
         ]);
     }
     public function create()
@@ -45,9 +46,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id)->delete();
-        return view('products.index', [
-            'products' => $this->products,
-        ]);
+        return redirect()->route('products.index');
     }
 }
 
