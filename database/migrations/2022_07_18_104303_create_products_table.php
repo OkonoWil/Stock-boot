@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('characteristic');
             $table->integer('price');
-            $table->integer('quantity')->nullable();
+            $table->integer('quantity');
             $table->integer('stock_min')->nullable();
             $table->string('providor');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

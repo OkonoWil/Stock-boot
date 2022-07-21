@@ -9,35 +9,60 @@
         @csrf
         <div class="w-full flex flex-col">
             <div class="w-1/2 flex flex-col m-1 text-xl">
-                <label for="title">Name :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="name">
+                <div>
+                    <label for="title">Name :</label>
+                    @error('name')
+                    <span class="text-sm text-red-500">{{$message}}</span>
+                    @enderror
+                </div>
+                <input class="border-2 rounded-md border-teal-500 @error('name') border-red-400 @enderror" type="text" name="name" value="{{old('name')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
-                <label for="characteristic">Characteristic :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="characteristic">
+                <div>
+                    <label for="characteristic">Characteristic :</label>
+                    @error('characteristic')
+                    <span class="text-sm text-red-500">{{$message}}</span>
+                    @enderror
+                </div>
+                <input class="border-2 rounded-md border-teal-500 @error('characteristic') border-red-400 @enderror" type="text" name="characteristic"  value="{{old('characteristic')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
-                <label for="price">Price :</label>
-                <input class="border-2 rounded-md border-teal-500" type="number" name="price">
+                <div>
+                    <label for="price">Price :</label>
+                    @error('price')
+                    <span class="text-sm text-red-500">{{$message}}</span>
+                    @enderror
+                </div>
+                <input class="border-2 rounded-md border-teal-500 @error('price') border-red-400 @enderror" type="number" name="price" value="{{old('price')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
-                <label for="quantity">Quantity :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="quantity">
+                <div>
+                    <label for="quantity">Quantity :</label>
+                    @error('quantity')
+                    <span class="text-sm text-red-500">{{$message}}</span>
+                    @enderror
+                </div>
+                <input class="border-2 rounded-md border-teal-500 @error('quantity') border-red-400 @enderror" type="text" name="quantity" value="{{old('quantity')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
                 <label for="stock_min">Stock min :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="stock_min">
+                <input class="border-2 rounded-md border-teal-500" type="text" name="stock_min" value="{{old('stock_min')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
-                <label for="providor">Providor :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="providor">
+                <div>
+                    <label for="providor">Providor :</label>
+                    @error('providor')
+                    <span class="text-sm text-red-500">{{$message}}</span>
+                    @enderror
+                </div>
+                <input class="border-2 rounded-md border-teal-500 @error('providor') border-red-400 @enderror" type="text" name="providor" value="{{old('providor')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
                 <label for="description">description :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="description">
+                <input class="border-2 rounded-md border-teal-500" type="text" name="description" value="{{old('description')}}">
             </div>
             <div class="flex justify-end w-1/2 m-2">
-                <div class="bg-teal-500 m-3 mr-0 p-2 text-2xl text-white font-bold border rounded-md w-1/2 text-center"><input type="submit" value="ADD"></div>
+                <div class="bg-teal-500 m-3 mr-0 p-2 text-2xl text-white font-bold border rounded-md w-1/2 text-center"><input  class="w-full cursor-pointer" type="submit" value="ADD"></div>
             </div>
         </div>
     </form>

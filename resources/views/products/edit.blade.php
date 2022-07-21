@@ -10,38 +10,61 @@
         @method('PUT')
         @csrf
         <div class="w-full flex flex-col">
+
             <div class="flex flex-row m-2 text-xl">
                 <label class="font-medium text-stone-700 w-40" for="title">ID :</label>
                 <input class="border-2 rounded-md border-teal-500  w-2/3" type="text" name="id" value="{{$product['id']}}" disabled>
             </div>
-            <div class="flex flex-row m-2 text-xl">
+
+            <div class="flex flex-row-2 m-2 text-xl">
                 <label class="font-medium text-stone-700 w-40" for="title">Name :</label>
-                <input class="border-2 rounded-md border-teal-500  w-2/3" type="text" name="name" value="{{$product['name']}}" >
+                <input class="border-2 rounded-md border-teal-500  w-2/3 @error('name') border-red-400 @enderror" type="text" name="name" value="{{$product['name']}}" >
             </div>
+            @error('name')
+            <span class="text-sm text-red-500 ml-44">{{$message}}</span>
+            @enderror
+
             <div class="flex flex-row m-2 text-xl">
                 <label class="font-medium text-stone-700 w-40" for="characteristic">Characteristic :</label>
-                <input class="border-2 rounded-md border-teal-500  w-2/3" type="text" name="characteristic" value="{{$product['characteristic']}}" >
+                <input class="border-2 rounded-md border-teal-500  w-2/3 @error('characteristic') border-red-400 @enderror" type="text" name="characteristic" value="{{$product['characteristic']}}" >
             </div>
+            @error('characteristic')
+            <span class="text-sm text-red-500 ml-44">{{$message}}</span>
+            @enderror
+
             <div class="flex flex-row m-2 text-xl">
                 <label class="font-medium text-stone-700 w-40" for="price">Price :</label>
-                <input class="border-2 rounded-md border-teal-500  w-2/3" type="number" name="price" value="{{$product['price']}}" >
+                <input class="border-2 rounded-md border-teal-500  w-2/3 @error('price') border-red-400 @enderror" type="number" name="price" value="{{$product['price']}}" >
             </div>
+            @error('price')
+            <span class="text-sm text-red-500 ml-44">{{$message}}</span>
+            @enderror
+
             <div class="flex flex-row m-2 text-xl">
                 <label class="font-medium text-stone-700 w-40" for="quantity">Quantity :</label>
-                <input class="border-2 rounded-md border-teal-500  w-2/3" type="text" name="quantity" value="{{$product['quantity']}}" >
+                <input class="border-2 rounded-md border-teal-500  w-2/3 @error('quantity') border-red-400 @enderror" type="text" name="quantity" value="{{$product['quantity']}}" >
             </div>
+            @error('quantity')
+            <span class="text-sm text-red-500 ml-44">{{$message}}</span>
+            @enderror
+
             <div class="flex flex-row m-2 text-xl">
                 <label class="font-medium text-stone-700 w-40" for="stock_min">Stock min :</label>
                 <input class="border-2 rounded-md border-teal-500  w-2/3" type="text" name="stock_min" value="{{$product['stock_min']}}" >
             </div>
+
             <div class="flex flex-row m-2 text-xl">
                 <label class="font-medium text-stone-700 w-40" for="providor">Providor :</label>
-                <input class="border-2 rounded-md border-teal-500  w-2/3" type="text" name="providor" value="{{$product['providor']}}" >
+                <input class="border-2 rounded-md border-teal-500  w-2/3 @error('providor') border-red-400 @enderror" type="text" name="providor" value="{{$product['providor']}}" >
             </div>
+            @error('providor')
+            <span class="text-sm text-red-500 ml-44">{{$message}}</span>
+            @enderror
             <div class="flex flex-row m-2 text-xl">
                 <label class="font-medium text-stone-700 w-40" for="description">description :</label>
                 <input class="border-2 rounded-md border-teal-500  w-2/3" type="text" name="description" value="{{$product['description']}}" >
             </div>
+
             <div class="flex justify-end w-1/2 m-2">
                 <div class="bg-teal-500 m-3 mr-0 p-2 text-2xl text-white font-bold border rounded-md w-1/2 text-center"><input class="w-full cursor-pointer" type="submit" value="UPDATE"></div>
             </div>
