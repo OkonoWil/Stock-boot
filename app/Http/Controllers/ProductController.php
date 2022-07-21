@@ -16,14 +16,19 @@ class ProductController extends Controller
             'request' => $request
         ]);
     }
-    public function create()
+    public function create(Request $request)
     {
-        return view('products.create');
+        return view('products.create', [
+            'request' => $request
+        ]);
     }
-    public function details($id)
+    public function details(Request $request, $id)
     {
         $product = Product::find($id);
-        return view('products.details', ['product' => $product]);
+        return view('products.details', [
+            'product' => $product,
+            'request' => $request
+        ]);
     }
     public function save(Request $request)
     {
@@ -33,15 +38,20 @@ class ProductController extends Controller
         Product::query()->create($request->except(['_token']));
         return redirect()->route('products.index');
     }
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
         Product::find($id)->update($request->all());
         return redirect()->route('products.index');
     }
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        $product = Product::find($id)->get()->first();
-        return view('products.edit', ['product' => $product]);
+        //dd($id);
+        $product = Product::find($id);
+        //dd($product);
+        return view('products.edit', [
+            'product' => $product,
+            'request' => $request
+        ]);
     }
     public function destroy($id)
     {

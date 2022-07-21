@@ -10,37 +10,37 @@
         @method('PUT')
         @csrf
         <div class="w-full flex flex-col">
-            <div class="w-1/2 flex flex-col m-2 text-xl">
-                <label class="font-medium text-stone-700" for="title">ID :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="id" value="{{$product['id']}}" disabled>
+            <div class="flex flex-row m-2 text-xl">
+                <label class="font-medium text-stone-700 w-40" for="title">ID :</label>
+                <input class="border-2 rounded-md border-teal-500 w-2/3" type="text" name="id" value="{{$product['id']}}" disabled>
             </div>
-            <div class="w-1/2 flex flex-col m-2 text-xl">
-                <label for="title">Name :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="name" value="{{$product['name']}}" disabled>
+            <div class="flex flex-row m-2 text-xl">
+                <label class="font-medium text-stone-700 w-40" for="title">Name :</label>
+                <input class="border-2 rounded-md border-teal-500 w-2/3" type="text" name="name" value="{{$product['name']}}" disabled>
             </div>
-            <div class="w-1/2 flex flex-col m-2 text-xl">
-                <label for="characteristic">Characteristic :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="characteristic" value="{{$product['characteristic']}}" disabled>
+            <div class="flex flex-row m-2 text-xl">
+                <label class="font-medium text-stone-700 w-40" for="characteristic">Characteristic :</label>
+                <input class="border-2 rounded-md border-teal-500 w-2/3" type="text" name="characteristic" value="{{$product['characteristic']}}" disabled>
             </div>
-            <div class="w-1/2 flex flex-col m-2 text-xl">
-                <label for="price">Price :</label>
-                <input class="border-2 rounded-md border-teal-500" type="number" name="price" value="{{$product['price']}}" disabled>
+            <div class="flex flex-row m-2 text-xl">
+                <label class="font-medium text-stone-700 w-40" for="price">Price :</label>
+                <input class="border-2 rounded-md border-teal-500 w-2/3" type="number" name="price" value="{{$product['price']}}" disabled>
             </div>
-            <div class="w-1/2 flex flex-col m-2 text-xl">
-                <label for="quantity">Quantity :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="quantity" value="{{$product['quantity']}}" disabled>
+            <div class="flex flex-row m-2 text-xl">
+                <label class="font-medium text-stone-700 w-40" for="quantity">Quantity :</label>
+                <input class="border-2 rounded-md border-teal-500 w-2/3" type="text" name="quantity" value="{{$product['quantity']}}" disabled>
             </div>
-            <div class="w-1/2 flex flex-col m-2 text-xl">
-                <label for="stock_min">Stock min :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="stock_min" value="{{$product['stock_min']}}" disabled>
+            <div class="flex flex-row m-2 text-xl">
+                <label class="font-medium text-stone-700 w-40" for="stock_min">Stock min :</label>
+                <input class="border-2 rounded-md border-teal-500 w-2/3" type="text" name="stock_min" value="{{$product['stock_min']}}" disabled>
             </div>
-            <div class="w-1/2 flex flex-col m-2 text-xl">
-                <label for="providor">Providor :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="providor" value="{{$product['providor']}}" disabled>
+            <div class="flex flex-row m-2 text-xl">
+                <label class="font-medium text-stone-700 w-40" for="providor">Providor :</label>
+                <input class="border-2 rounded-md border-teal-500 w-2/3" type="text" name="providor" value="{{$product['providor']}}" disabled>
             </div>
-            <div class="w-1/2 flex flex-col m-2 text-xl">
-                <label for="description">description :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="description" value="{{$product['description']}}" disabled>
+            <div class="flex flex-row m-2 text-xl">
+                <label class="font-medium text-stone-700 w-40" class="" for="description">description :</label>
+                <input class="border-2 rounded-md border-teal-500 w-2/3" type="text" name="description" value="{{$product['description']}}" disabled>
             </div>
         </div>
     </form>
