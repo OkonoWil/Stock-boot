@@ -10,7 +10,7 @@
         <div class="w-full flex flex-col">
             <div class="w-1/2 flex flex-col m-1 text-xl">
                 <div>
-                    <label for="title">Name :</label>
+                    <label for="name">Name :</label>
                     @error('name')
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror

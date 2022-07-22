@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -10,16 +12,26 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }
-    function postLogin()
+    function postLogin(Request $request)
     {
-        return view('auth.login');
     }
     function getRegister()
     {
         return view('auth.register');
     }
-    function postRegister()
+    function postRegister(Request $request)
     {
-        return view('auth.register');
+        $this->validate($request, [
+            'name' => ['required'],
+            'email' => ['required', 'unique:users,email'],
+            'password' => ['required'],
+            'condition' => ['accepted']
+        ]);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+        return redirect()->route('products.index');
     }
 }

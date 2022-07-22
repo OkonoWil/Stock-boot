@@ -7,10 +7,10 @@
     <form action="{{route('postlogin')}}" method="post" class="box-border">
         @csrf
         <div class=" box-border">
-            <input type="email" name="email" id="email" placeholder="Email address" class="block p-2.5 m-2 bg-gray-50 text-white w-full border border-gray-500 rounded-md">
+            <input type="email" name="email" id="email" placeholder="Email address" class="block p-2.5 m-2 bg-gray-50 text-gray-600 w-full border border-gray-500 rounded-md">
         </div>
         <div class=" box-border">
-            <input type="password" name="password" id="password" placeholder="Password" class="block p-2.5 m-2 bg-gray-50 text-white w-full border border-gray-500 rounded-md">
+            <input type="password" name="password" id="password" placeholder="Password" class="block p-2.5 m-2 bg-gray-50 text-gray-600 w-full border border-gray-500 rounded-md">
         </div>
         <div class="flex flex-row justify-between box-border">
             <div>
