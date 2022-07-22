@@ -34,3 +34,10 @@ Route::get('/products/{id}', [ProductController::class, 'details'])->name('produ
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
 Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+
+//**************************ROUTE----Products***************************/
+route::get('/login', [AuthController::class, 'getLogin'])->name('getlogin');
+route::post('/login', [AuthController::class, 'postLogin'])->name('postlogin');
+route::get('/register', [AuthController::class, 'getRegister'])->name('getregister');
+route::post('/register', [AuthController::class, 'postRegister'])->name('postregister');

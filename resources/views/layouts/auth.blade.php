@@ -8,8 +8,8 @@
     <title>{{env('APP_NAME')}} - @yield('title')</title>
     @vite('resources/css/app.css')
 </head>
-<body>
-    <div class="container flex justify-center items-center h-full w-full">
+<body class="h-screen w-screen text-base">
+    <div class="container flex justify-center items-center h-full">
         @yield('content')
     </div>
 </body>
