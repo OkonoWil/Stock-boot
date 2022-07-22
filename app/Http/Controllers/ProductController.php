@@ -24,7 +24,7 @@ class ProductController extends Controller
     }
     public function details(Request $request, $id)
     {
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         return view('products.details', [
             'product' => $product,
             'request' => $request
@@ -69,7 +69,7 @@ class ProductController extends Controller
     public function edit(Request $request, $id)
     {
         //dd($id);
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         //dd($product);
         return view('products.edit', [
             'product' => $product,
@@ -78,7 +78,7 @@ class ProductController extends Controller
     }
     public function destroy($id)
     {
-        $product = Product::find($id)->delete();
+        $product = Product::findOrFail($id)->delete();
         return redirect()->route('products.index');
     }
 }
