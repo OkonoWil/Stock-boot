@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -14,6 +15,16 @@ class AuthController extends Controller
     }
     function postLogin(Request $request)
     {
+        $this->validate($request, [
+            'email' => ['required', 'exists:users,email'],
+            'password' => ['required'],
+        ]);
+        $user = User::query()->where("email", $request->email)->first();
+        if (!Hash::check($request->password, $user->password)) {
+            return redirect()->back()->withErrors(['password' => 'Invalid credentials']);
+        }
+        Auth::login($user, $request->remember);
+        return redirect()->intended('/');
     }
     function getRegister()
     {
@@ -33,5 +44,10 @@ class AuthController extends Controller
             'password' => Hash::make($request->password)
         ]);
         return redirect()->route('products.index');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('welcome');
     }
 }

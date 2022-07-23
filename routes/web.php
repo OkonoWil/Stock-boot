@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //**************************ROUTE----HOME***************************/
-Route::get("/", [HomeController::class, 'home']);
+Route::get("/", [HomeController::class, 'home'])->name('welcome');
 
 
 //**************************ROUTE----Login***************************/
@@ -41,3 +41,4 @@ route::get('/login', [AuthController::class, 'getLogin'])->name('getlogin');
 route::post('/login', [AuthController::class, 'postLogin'])->name('postlogin');
 route::get('/register', [AuthController::class, 'getRegister'])->name('getregister');
 route::post('/register', [AuthController::class, 'postRegister'])->name('postregister');
+route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');

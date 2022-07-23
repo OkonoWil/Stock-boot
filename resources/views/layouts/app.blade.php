@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{asset('icons8_online_store.ico')}}" type="image/x-icon">
   <title>{{env('APP_NAME')}} - @yield('title')</title>
+  <link rel="stylesheet" href="{{asset('FontAwesone/css/all.css')}}">
   @vite('resources/css/app.css')
 </head>
 <body>

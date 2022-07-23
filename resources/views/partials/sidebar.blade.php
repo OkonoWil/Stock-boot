@@ -15,5 +15,10 @@
         @else
         <li class=" m-3 font-bold"><a href="#">Contact</a></li>
         @endif
+        @auth
+            <li class=" m-3 font-bold"><a href="{{route('auth.logout')}}">Logout</a></li>
+        @else
+            <li class=" m-3 font-bold"><a href="{{route('getlogin')}}">Login</a></li>
+        @endauth
     </ul>
 </nav>
