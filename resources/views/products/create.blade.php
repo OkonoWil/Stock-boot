@@ -15,7 +15,7 @@
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input class="border-2 rounded-md border-teal-500 @error('name') border-red-400 @enderror" type="text" name="name" value="{{old('name')}}">
+                <input class="border-2 rounded-md @error('name') border-red-400 @else border-teal-500  @enderror" type="text" name="name" value="{{old('name')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
                 <div>
@@ -24,7 +24,7 @@
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input class="border-2 rounded-md border-teal-500 @error('characteristic') border-red-400 @enderror" type="text" name="characteristic"  value="{{old('characteristic')}}">
+                <input class="border-2 rounded-md @error('characteristic') border-red-400 @else border-teal-500  @enderror" type="text" name="characteristic"  value="{{old('characteristic')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
                 <div>
@@ -33,7 +33,7 @@
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input class="border-2 rounded-md border-teal-500 @error('price') border-red-400 @enderror" type="number" name="price" value="{{old('price')}}">
+                <input class="border-2 rounded-md @error('price') border-red-400 @else border-teal-500  @enderror" type="number" name="price" value="{{old('price')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
                 <div>
@@ -42,7 +42,7 @@
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input class="border-2 rounded-md border-teal-500 @error('quantity') border-red-400 @enderror" type="text" name="quantity" value="{{old('quantity')}}">
+                <input class="border-2 rounded-md @error('quantity') border-red-400 @else border-teal-500 @enderror" type="text" name="quantity" value="{{old('quantity')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
                 <label for="stock_min">Stock min :</label>
@@ -55,7 +55,7 @@
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input class="border-2 rounded-md border-teal-500 @error('providor') border-red-400 @enderror" type="text" name="providor" value="{{old('providor')}}">
+                <input class="border-2 rounded-md  @error('providor') border-red-400 @else border-teal-500 @enderror" type="text" name="providor" value="{{old('providor')}}">
             </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
                 <label for="description">description :</label>

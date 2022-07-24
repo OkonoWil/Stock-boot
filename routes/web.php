@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //**************************ROUTE----HOME***************************/
-Route::get("/", [HomeController::class, 'home'])->name('welcome');
+Route::get("/", [HomeController::class, 'home'])->name('home');
 
 
 //**************************ROUTE----Login***************************/
@@ -26,19 +26,20 @@ Route::get('/login', [AuthController::class, 'getLogin']);
 
 
 //**************************ROUTE----Products***************************/
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-Route::post('/products', [ProductController::class, 'save'])->name('products.save');
 //routing dynamique avec nommage
-Route::get('/products/{id}', [ProductController::class, 'details'])->name('products.details');
-Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
-Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
-Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 
-
+Route::middleware('auth')->group(function () {
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/products', [ProductController::class, 'save'])->name('products.save');
+    Route::get('/products/{id}', [ProductController::class, 'details'])->name('products.details');
+    Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+    Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+    Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+    route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+});
 //**************************ROUTE----Products***************************/
-route::get('/login', [AuthController::class, 'getLogin'])->name('getlogin');
 route::post('/login', [AuthController::class, 'postLogin'])->name('postlogin');
 route::get('/register', [AuthController::class, 'getRegister'])->name('getregister');
 route::post('/register', [AuthController::class, 'postRegister'])->name('postregister');
-route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+route::get('/login', [AuthController::class, 'getLogin'])->name('getlogin');
