@@ -22,7 +22,10 @@ Route::get("/", [HomeController::class, 'home'])->name('home');
 
 
 //**************************ROUTE----Login***************************/
-Route::get('/login', [AuthController::class, 'getLogin']);
+route::post('/login', [AuthController::class, 'postLogin'])->name('postlogin');
+route::get('/register', [AuthController::class, 'getRegister'])->name('getregister');
+route::post('/register', [AuthController::class, 'postRegister'])->name('postregister');
+route::get('/login', [AuthController::class, 'getLogin'])->name('getlogin');
 
 
 //**************************ROUTE----Products***************************/
@@ -39,7 +42,3 @@ Route::middleware('auth')->group(function () {
     route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
 //**************************ROUTE----Products***************************/
-route::post('/login', [AuthController::class, 'postLogin'])->name('postlogin');
-route::get('/register', [AuthController::class, 'getRegister'])->name('getregister');
-route::post('/register', [AuthController::class, 'postRegister'])->name('postregister');
-route::get('/login', [AuthController::class, 'getLogin'])->name('getlogin');
