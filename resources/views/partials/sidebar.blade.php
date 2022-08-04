@@ -5,7 +5,7 @@
         @else
         <li class=" m-3 font-bold"><a href="/">Home</a></li>
         @endif
-        @if ($request->is("products/*")||$request->is("products"))
+        @if (request()->is("products/*")||$request->is("products"))
         <li class=" m-3 font-bold text-indigo-800"><a href="{{route('products.index')}}">Products</a></li>
         @else
         <li class=" m-3 font-bold"><a href="{{route('products.index')}}">Products</a></li>

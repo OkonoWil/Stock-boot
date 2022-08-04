@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->bigInteger('price');
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->bigInteger('category_id')->unsigned()->nullable();
             $table->string('characteristic');
             $table->integer('quantity')->nullable();
             $table->integer('stock_min')->default(0);

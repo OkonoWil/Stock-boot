@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <h1 class=" text-center m-5  font-bold text-indigo-700  text-3xl pb-1">PRODUCT CREATE</h1>
-    <form action="{{route('products.save')}}" method="POST">
+    <form action="{{route('products.save')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="w-full flex flex-col">
             <div class="w-1/2 flex flex-col m-1 text-xl">
@@ -17,6 +17,10 @@
                 </div>
                 <input class="border-2 rounded-md @error('name') border-red-400 @else border-teal-500  @enderror" type="text" name="name" value="{{old('name')}}">
             </div>
+            <div>
+                <label for="file">Sélectionner le fichier à envoyer</label>
+                <input type="file" id="file" name="file" multiple>
+              </div>
             <div class="w-1/2 flex flex-col m-1 text-xl">
                 <div>
                     <label for="characteristic">Characteristic :</label>

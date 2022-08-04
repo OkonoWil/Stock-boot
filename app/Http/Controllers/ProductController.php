@@ -32,6 +32,7 @@ class ProductController extends Controller
     }
     public function save(Request $request)
     {
+        dd($request->file);
         $this->validate($request, [
             'name' => ['required', 'unique:products,name'],
             'price' => ['required'],
@@ -55,7 +56,7 @@ class ProductController extends Controller
         }
         if ($request->name != $product->name) {
             $this->validate($request, [
-                'name' => ['required', 'unique:products,name'],
+                'name' => ['required', 'unique:products,name,except,id'],
                 'price' => ['required'],
                 'quantity' => ['required'],
                 'providor' => ['required'],

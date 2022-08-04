@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="conatiner flex flex-row">
-    <div class="h-screen bg-indigo-400 flex justify-center text-white text-xl w-1/5 p-6">
+    <div class=" h-screen bg-indigo-400 flex justify-center text-white text-xl w-1/5 p-6">
         @include('partials.sidebar')
     </div>
     <div class="h-screen flex-col container p-3">
